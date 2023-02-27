@@ -1,0 +1,21 @@
+<h1><%= @favorite_place.name %></h1>
+
+<p>住所: <%= @favorite_place.address %></p>
+<%= link_to '登録店一覧', root_path %>
+<div id="map" style="height: 400px;"></div>
+<script>
+  function initMap() {
+    const latlng = new google.maps.LatLng(<%= @favorite_place.latitude %>, <%= @favorite_place.longitude %>);
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: latlng,
+    });
+
+    const marker = new google.maps.Marker({
+      position: latlng,
+      map: map,
+      title: "<%= @favorite_place.name %>",
+    });
+  }
+</script>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}&callback=initMap" %>

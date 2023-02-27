@@ -1,0 +1,50 @@
+<h1>お気に入りの店舗を登録する</h1>
+
+<%= form_with model: @favorite_place, local: true do |form| %>
+  <% if @favorite_place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@favorite_place.errors.count, "error") %> があります。</h2>
+      <ul>
+        <% @favorite_place.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+<div class="field">
+  <%= form.label :address %>
+  <%= form.text_field :address, id: "address_input" %>
+  <%= button_tag "お店があるかチェック", id: "search_address" %>
+</div>
+
+  <div class="actions">
+    <%= form.submit "登録する" %>
+  </div>
+<% end %>
+ <br>
+<%= link_to '登録店一覧', root_path %>
+
+<script>
+  const searchAddress = () => {
+    const geocoder = new google.maps.Geocoder();
+    const address = document.getElementById('address_input').value;
+    geocoder.geocode({ address: address }, (results, status) => {
+      if (status === 'OK') {
+        const lat = results[0].geometry.location.lat();
+        const lng = results[0].geometry.location.lng();
+        document.getElementById('favorite_place_latitude').value = lat;
+        document.getElementById('favorite_place_longitude').value = lng;
+      } else {
+        alert('住所が見つかりませんでした。');
+      }
+    });
+  }
+
+  document.getElementById('search_address').addEventListener('click', searchAddress);
+</script>
