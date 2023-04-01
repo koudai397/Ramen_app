@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>RamenApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'header' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
    <header>
-      <% if user_signed_in? %>
-        <h3><%= current_user.email %>でログイン中</h3>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% else %>
-      <% end %>
+      <nav>
+        <div class="logo-container">
+          <%= link_to image_tag("https://free-materials.com/adm/wp-content/uploads/2020/10/logo_r05.png"), "/" %>
+        </div>
+          <% if user_signed_in? %>
+              <ul>
+                <li><%= current_user.email %>でログイン中</li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <ul>
+              <li><%= link_to "新規登録", new_user_registration_path %></li>
+              <li><%= link_to "ログイン", new_user_session_path %></li>
+            </ul>
+          <% end %>
+        </nav>
+
     </header>
     <%= yield %>
+
   </body>
 </html>
