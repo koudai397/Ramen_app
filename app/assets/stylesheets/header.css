@@ -1,30 +1,72 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+body {
+  padding: 30px;
+  background: fafafa;
+  height: 100vh;
+}
+img {
+  vertical-align: bottom;
+}
 
 
+.container{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  max-width: none;
+}
 
-  header {
-    display: flex;
-    justify-content: space-between;
+header + header {
+  margin-top: 50px;
+  }
+
+.header {
+  display: flex;
     align-items: center;
-    height: 80px;
+    height: 100px;
     background-color: #fff;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     padding: 0 30px;
+}
+
+.header > .container{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  max-width: none;
+}
+
+.area_logo_header .logo{
+  display: block;
+}
+
+  .area_logo_header .logo img {
+    width: 100px;
+    height: 100px;
+    vertical-align: bottom;
   }
 
-  .logo-container img {
-    height: 40px;
+  /* ナビゲーション */
+
+
+  .area_nav_header{
+    margin-left: auto;
   }
 
-  nav ul {
+  .list_nav_header{
     display: flex;
+    align-items: center;
     list-style: none;
-    padding: 0;
-    margin: 0;
   }
 
-  nav li:not(:last-child) {
-    margin-right: 20px;
-  }
+.list_nav_header > li + li {
+  margin-left: 40px
+}
+
+.list_nav_header a {
+   font: 500 15px/1em 'noto sans japanese',sans-serif;
+}
 
   nav a {
     color: #333;
@@ -37,3 +79,4 @@
   nav a:hover {
     color: #2486d1;
   }
+
