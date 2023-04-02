@@ -7,28 +7,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'header' %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'map' %>
   </head>
 
   <body>
    <header>
-      <nav>
-        <div class="logo-container">
+  <div class="header">
+      <div class="container">
+      <%# ロゴエリア %>
+       <div class="area_logo_header">
+       <div class="logo">
           <%= link_to image_tag("https://free-materials.com/adm/wp-content/uploads/2020/10/logo_r05.png"), "/" %>
         </div>
+        </div>
+        <nav class="area_nav_header">
           <% if user_signed_in? %>
-              <ul>
+              <ul class="list_nav_header">
                 <li><%= current_user.email %>でログイン中</li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             </ul>
           <% else %>
-            <ul>
+            <ul class="list_nav_header">
               <li><%= link_to "新規登録", new_user_registration_path %></li>
               <li><%= link_to "ログイン", new_user_session_path %></li>
             </ul>
           <% end %>
+          </div>
         </nav>
-
+        </div>
     </header>
     <%= yield %>
 
