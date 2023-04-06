@@ -1,24 +1,23 @@
-# README
+#ラーメンアプリ
+このアプリは、お気に入りのラーメン店を登録・管理することができます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#機能
+ラーメン店の登録・編集・削除
+登録したラーメン店の一覧表示
+登録したラーメン店の地図表示
 
-Things you may want to cover:
+#インストール方法
+このリポジトリをクローンします。
+bundle installを実行します。
+rails db:migrateを実行します。
 
-* Ruby version
+#使い方
+rails serverを実行し、アプリケーションを起動します。
+ブラウザで http://localhost:3000/ にアクセスします。
+ラーメン店を登録・編集・削除できます。
+登録したラーメン店の一覧表示や地図表示ができます。
 
-* System dependencies
+#クレジット
+このアプリは以下のライブラリを使用しています。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Google Maps JavaScript API
