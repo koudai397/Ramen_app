@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>RamenApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'header' %>
-    <%= javascript_include_tag 'map' %>
   </head>
-
   <body>
    <header>
-  <div class="header">
-      <div class="container">
-      <%# ロゴエリア %>
-       <div class="area_logo_header">
-       <div class="logo">
-          <%= link_to image_tag("https://free-materials.com/adm/wp-content/uploads/2020/10/logo_r05.png"), "/" %>
+  <div class="header_inner">
+    <div class="title_logo">
+     <%= link_to image_tag("https://www.silhouette-illust.com/wp-content/uploads/2016/06/3506-300x300.jpg"), "/" %>
         </div>
-        </div>
-        <nav class="area_nav_header">
+        <nav class="gnav">
+          <ul class="gnav_list">
           <% if user_signed_in? %>
-              <ul class="list_nav_header">
-                <li><%= current_user.email %>でログイン中</li>
-              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-            </ul>
+                  <li><%= current_user.email %>でログイン中</li >
+                      <%= link_to "登録店一覧", favorite_places_path %>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
           <% else %>
-            <ul class="list_nav_header">
               <li><%= link_to "新規登録", new_user_registration_path %></li>
               <li><%= link_to "ログイン", new_user_session_path %></li>
-            </ul>
           <% end %>
-          </div>
-        </nav>
+            </ul>
+            </nav>
         </div>
     </header>
     <%= yield %>
-
+      <footer class="flex-footer">
+    	  <p>© All rights reserved by dmmwebcampmedia.</p>
+      </footer>
   </body>
 </html>
