@@ -1,0 +1,88 @@
+/* フォーム全体 */
+#favorite-place-form {
+  width: 800px;
+  margin: 50 auto;
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #999999;
+}
+
+/* エラーメッセージ */
+#error_explanation {
+  color: #ff0000;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#error_explanation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#error_explanation li {
+  margin-bottom: 5px;
+}
+
+/* フィールド */
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#address_input {
+  margin-bottom: 5px;
+}
+
+#search_address {
+  background-color: #337ab7;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* マップ */
+#map {
+  margin-top: 20px;
+}
+
+/* 登録ボタン */
+#submit_button {
+  background-color: #337ab7;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 登録店一覧リンク */
+a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
