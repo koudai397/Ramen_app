@@ -1,30 +1,31 @@
-<head>
-    <%= stylesheet_link_tag 'list' %>
-</head>
+    <head>
+        <%= stylesheet_link_tag 'list' %>
+    </head>
+    <h1>お気に入りの店舗一覧</h1>
+    <% if @favorite_places.any? %>
+      <table>
+        <thead>
+          <tr>
+            <th>店名</th>
+            <th>住所</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @favorite_places.each do |favorite_place| %>
+            <tr>
+              <td><%= link_to favorite_place.name, favorite_place_path(favorite_place) %></td>
+              <td><%= favorite_place.address %></td>
+              <td><%= button_to '削除', favorite_place_path(favorite_place), method: :delete, data: { turbo_method: 'delete', turbo_confirm: '本当に削除しますか？' } %></td>
 
-<h1>お気に入りの店舗一覧</h1>
-
-<% if @favorite_places.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>店名</th>
-        <th>住所</th>
-        <th>操作</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @favorite_places.each do |favorite_place| %>
-        <tr>
-          <td><%= link_to favorite_place.name, favorite_place_path(favorite_place) %></td>
-          <td><%= favorite_place.address %></td>
-          <td><%= link_to '削除', favorite_place_path(favorite_place), method: :delete, data: { turbo_method: 'delete', turbo_confirm: '本当に削除しますか？' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p>お気に入りの店舗はありません。</p>
-<% end %>
-<br>
-<%= link_to "新規登録", new_favorite_place_path %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>お気に入りの店舗はありません。</p>
+    <% end %>
+    <br>
+    <div class= "new-favorite-place">
+      <%= link_to "新規登録", new_favorite_place_path %>
+    </div>
