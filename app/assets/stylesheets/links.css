@@ -1,0 +1,11 @@
+.link-container {
+  display: grid;
+  place-items: center;
+}
+.link-container-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}

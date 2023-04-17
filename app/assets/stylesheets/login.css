@@ -1,0 +1,52 @@
+.login-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-input {
+  width: 50%;
+  font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+.login-checkbox {
+  margin-right: 0.5rem;
+}
+.remember-me-label {
+  font-size: 0.9rem;
+  margin-left: 0.25rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.login-submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-submit-button:hover {
+  background-color: #0069d9;
+}
