@@ -7,7 +7,7 @@
 * 登録したラーメン店の地図表示  
 
 ### デモ
-https://user-images.githubusercontent.com/111045383/232701068-00abf5dd-9918-4f28-aadf-f4b2eb35e781.mp4
+https://user-images.githubusercontent.com/111045383/232702423-d340192d-8cfe-4a60-9a13-b9af8ab95d63.mp4
 
 
 
