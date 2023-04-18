@@ -1,3 +1,7 @@
+.signup-container {
+  height: 70vh;
+}
+
 .signup-title {
   display: flex;
   flex-direction: column;
