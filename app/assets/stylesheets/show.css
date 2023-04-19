@@ -1,0 +1,39 @@
+.favorite-place-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.favorite-place-info {
+  width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-place-address {
+  font-size: 20px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.favorite-place-list-link {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.favorite-place-list-link:hover {
+  color: #337ab7;
+}
+
+.favorite-place-map {
+  height: 400px;
+  margin-top: 20px;
+}

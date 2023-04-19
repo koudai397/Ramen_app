@@ -1,12 +1,15 @@
-<%# <head>
-  <%= javascript_include_tag 'map' %>
-<%# </head> %>
+<head>
+        <%= stylesheet_link_tag 'show' %>
 
-<h1><%= @favorite_place.name %></h1>
+</head>
 
-<p>住所: <%= @favorite_place.address %></p>
-<%= link_to '登録店一覧', root_path %>
-<div id="map" style="height: 400px;"></div>
+<%# cssファイルつくる。↑の名前と合わせる。→gptの回答を観る %>
+<h1 class="favorite-place-title"><%= @favorite_place.name %></h1>
+<div class="favorite-place-info">
+<p class="favorite-place-address">住所: <%= @favorite_place.address %></p>
+<%= link_to '登録店一覧', root_path,class: "favorite-place-list-link" %>
+</div>
+<div id="map" class="favorite-place-map"></div>
 
 <script>
   function initMap() {
