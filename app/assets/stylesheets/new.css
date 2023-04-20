@@ -1,4 +1,3 @@
-/* フォーム全体 */
 #favorite-place-form {
   width: 800px;
   margin: 50 auto;
@@ -8,28 +7,26 @@
   box-shadow: 0px 0px 10px #999999;
 }
 
-/* エラーメッセージ */
-#error_explanation {
+#error-explanation {
   color: #ff0000;
   margin-bottom: 20px;
 }
 
-#error_explanation h2 {
+#error-explanation h2 {
   margin-bottom: 10px;
   font-size: 18px;
 }
 
-#error_explanation ul {
+#error-explanation ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-#error_explanation li {
+#error-explanation li {
   margin-bottom: 5px;
 }
 
-/* フィールド */
 .field {
   margin-bottom: 20px;
 }
@@ -49,11 +46,11 @@
   box-sizing: border-box;
 }
 
-#address_input {
+#address-input {
   margin-bottom: 5px;
 }
 
-#search_address {
+#search-address {
   background-color: #337ab7;
   color: #ffffff;
   padding: 10px 20px;
@@ -69,7 +66,7 @@
 }
 
 /* 登録ボタン */
-#submit_button {
+#submit-button {
   background-color: #337ab7;
   color: #ffffff;
   padding: 10px 20px;

@@ -1,51 +1,41 @@
-<!DO`CTYPE html>
-<html>
-  <head>
-    <title>RamenApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'header' %>
-  </head>
-  <body>
-   <header>
-    <div class="container">
-    <div class="header_inner">
-      <div class="title_logo"><%= link_to image_tag("https://www.silhouette-illust.com/wp-content/uploads/2016/06/3506-300x300.jpg"), "/" %>
-      </div>
-        <nav class="gnav">
-          <ul class="gnav_list">
-          <% if user_signed_in? %>
-                  <li><%= current_user.email %>でログイン中</li>
-                  <li><%= link_to "新規登録", new_favorite_place_path %></li>
-
-                  <li><%= link_to "登録店一覧", favorite_places_path %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-              <li><%= link_to "新規登録", new_user_registration_path %></li>
-              <li><%= link_to "ログイン", new_user_session_path %></li>
-          <% end %>
-            </ul>
-        </nav>
+  <!DO`CTYPE html>
+  <html>
+    <head>
+      <title>RamenApp</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <%= stylesheet_link_tag 'header' %>
+    </head>
+    <body>
+    <header>
+      <div class="container">
+      <div class="header-inner">
+        <div class="title-logo"><%= link_to image_tag("https://www.silhouette-illust.com/wp-content/uploads/2016/06/3506-300x300.jpg"), "/" %>
         </div>
-        <%# header_inner %>
-              </div>       <%#container %>
+          <nav class="gnav">
+            <ul class="gnav-list">
+            <% if user_signed_in? %>
+                    <li><%= current_user.email %>でログイン中</li>
+                    <li><%= link_to "新規登録", new_favorite_place_path %></li>
 
-    </header>
+                    <li><%= link_to "登録店一覧", favorite_places_path %></li>
+                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+                <li><%= link_to "新規登録", new_user_registration_path %></li>
+                <li><%= link_to "ログイン", new_user_session_path %></li>
+            <% end %>
+              </ul>
+          </nav>
+          </div>  <%# header-inner %>
+          </div>       <%#container %>
+      </header>
+      <%= yield %>
 
-
-    <%= yield %>
-
-       <footer>
-      <div class="hoge">
-        <p class="footer-text">All rights reserved by dmmwebcampmedia</p>
-      </div>
-    </footer>
-
-
-  </body>
-</html>
-     <%# <footer class="flex-footer">
-    	  <p>© All rights reserved by dmmwebcampmedia.</p>
+        <footer>
+        <div class="hoge">
+          <p class="footer-text">All rights reserved by Yamao Kodai</p>
+        </div>
       </footer>
-      </div> %>
+    </body>
+  </html>

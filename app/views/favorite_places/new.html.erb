@@ -1,11 +1,11 @@
 <head>
       <%= stylesheet_link_tag 'new' %>
-  </head>
+</head>
       <h1>お気に入りのラーメン屋を登録</h1>
 
   <%= form_with model: @favorite_place, local: true, html: { id: "favorite-place-form" } do |form| %>
       <% if @favorite_place.errors.any? %>
-      <div id="error_explanation">
+      <div id="error-explanation">
       <h2><%= pluralize(@favorite_place.errors.count, "error") %> があります。</h2>
       <ul>
           <% @favorite_place.errors.full_messages.each do |msg| %>
@@ -15,22 +15,22 @@
       </div>
     <% end %>
     <div class="field">
-      <%= form.label :name %>
+      <%= form.label :name, "店名" %>
       <%= form.text_field :name %>
     </div>
     <div class="field">
-      <%= form.label :address %>
-      <%= form.text_field :address, id: "address_input" %>
-      <%= button_tag "住所を検索する", id: "search_address" %>
+      <%= form.label :address , "住所"%>
+      <%= form.text_field :address, id: "address-input" %>
+      <%= button_tag "住所を検索する", id: "search-address" %>
     </div>
     <div id="map" style="height: 400px;"></div>
-      <%= form.hidden_field :latitude, id: "favorite_place_latitude" %>
-      <%= form.hidden_field :longitude, id: "favorite_place_longitude" %>
-      <%= form.submit "登録する", id: "submit_button", style: "display:none" %>
+      <%= form.hidden_field :latitude, id: "favorite-place-latitude" %>
+      <%= form.hidden_field :longitude, id: "favorite-place-longitude" %>
+      <%= form.submit "登録する", id: "submit-button", style: "display:none" %>
     <% end %>
     <br>
-
       <%= link_to '登録店一覧', root_path %>
+
   <script>
         function initMap() {
         //経度と緯度が格納されているかチェック
@@ -60,20 +60,15 @@
     const searchAddress = (event) => {
     event.preventDefault(); // フォームの送信を停止する
 
-    // 二重送信を防止するためにボタンを非アクティブ化する
-    // const searchButton = document.getElementById('search_address');
-    // searchButton.disabled = true;
-    // searchButton.textContent = "検索中...";
-
     const geocoder = new google.maps.Geocoder();
-    const address = document.getElementById('address_input').value;
+    const address = document.getElementById('address-input').value;
 
     geocoder.geocode({ address: address }, (results, status) => {
     if (status === 'OK') {
         const lat = results[0].geometry.location.lat();
         const lng = results[0].geometry.location.lng();
-        document.getElementById('favorite_place_latitude').value = lat;
-        document.getElementById('favorite_place_longitude').value = lng;
+        document.getElementById('favorite-place-latitude').value = lat;
+        document.getElementById('favorite-place-longitude').value = lng;
 
         // マップを表示する
         const latlng = new google.maps.LatLng(lat, lng);
@@ -90,12 +85,11 @@
 
         const submitButton = document.createElement("button");
         submitButton.addEventListener("click", () => {
-        if (document.getElementById("favorite_place_latitude").value === "" || document.getElementById("favorite_place_longitude").value === "") {
+        if (document.getElementById("favorite-place-latitude").value === "" || document.getElementById("favorite-place-longitude").value === "") {
             alert("住所を検索してください。");
         }
         });
-        document.getElementById("submit_button").style.display = "block";
-        // document.getElementById("submit_button").parentNode.appendChild(submitButton);
+        document.getElementById("submit-button").style.display = "block";
 
         // 住所検索ボタンを再度アクティブ化する
         searchButton.disabled = false;
@@ -103,7 +97,7 @@
     }
     });
     };
-    document.getElementById('search_address').addEventListener('click', searchAddress);
+    document.getElementById('search-address').addEventListener('click', searchAddress);
   </script>
 
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}&callback=initMap" %>
