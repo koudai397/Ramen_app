@@ -1,7 +1,8 @@
     <head>
         <%= stylesheet_link_tag 'list' %>
     </head>
-    <h1>お気に入りの店舗一覧</h1>
+    <div class="list-container">
+    <h1>お気に入りの店舗一覧 </h1>
     <% if @favorite_places.any? %>
       <table>
         <thead>
@@ -16,6 +17,7 @@
             <tr>
               <td><%= link_to favorite_place.name, favorite_place_path(favorite_place) %></td>
               <td><%= favorite_place.address %></td>
+
               <td><%= button_to '削除', favorite_place_path(favorite_place), method: :delete, data: { turbo_method: 'delete', turbo_confirm: '本当に削除しますか？' } %></td>
 
             </tr>
@@ -23,9 +25,10 @@
         </tbody>
       </table>
     <% else %>
-      <p>お気に入りの店舗はありません。</p>
+      <p class="list-text">お気に入りの店舗は登録されていません</p>
     <% end %>
     <br>
     <div class= "new-favorite-place">
       <%= link_to "新規登録", new_favorite_place_path %>
     </div>
+</div>
