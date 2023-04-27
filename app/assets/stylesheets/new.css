@@ -26,6 +26,11 @@
 #error-explanation li {
   margin-bottom: 5px;
 }
+#search-address,
+#submit-button {
+  display: block;
+  margin: 0 auto;
+}
 
 .field {
   margin-bottom: 20px;
